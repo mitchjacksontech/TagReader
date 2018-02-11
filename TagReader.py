@@ -160,4 +160,7 @@ class TagReader():
             self.ufr = CDLL(lib_loc)
 
         if not self.ufr:
+            self.ufr = CDLL('libuFCoder-armhf.so')
+
+        if not self.ufr:
             raise SystemExit("uFCoder library could not be loaded")
